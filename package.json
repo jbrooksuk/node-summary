@@ -1,0 +1,25 @@
+{
+  "name": "node-summary",
+  "version": "0.0.1",
+  "description": "Summarizes text using a naive summarization algorithm",
+  "main": "./lib/summary.js",
+  "scripts": {
+    "test": "mocha --require should --reporter spec"
+  },
+  "repository": "git://github.com/jbrooksuk/node-summary.git",
+  "keywords": [
+    "summary",
+    "text",
+    "summarization",
+    "algorithm"
+  ],
+  "dependencies": {
+    "underscore": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "author": "James Brooks <jbrooksuk@me.com>",
+  "readmeFilename": "README.md"
+}
