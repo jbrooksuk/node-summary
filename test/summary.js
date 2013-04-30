@@ -23,23 +23,22 @@ content += "If you use Percolate or read LinkedIn's recommended posts I think yo
 content += "Want to try Swayy out without having to wait? Go to this secret URL and enter the promotion code thenextweb . The first 300 people to use the code will get access.\n";
 content += "Image credit: Thinkstock";
 
-describe('build summary', function() {
-	var sentences_dic, thesummary;
-	it('should get sentences rankings', function() {
-		sentences_dic = summary.getSentencesRanks(content);
-		sentences_dic.should.be.a('object');
-	});
 
-	it('should have a summary', function() {
-		thesummary = summary.getSummary(title, content, sentences_dic);
-		thesummary.should.be.a('string');
-	});
+describe('summarize', function() {
+	var originallength, summarylength, summaryratio;
+	it('should build summary', function(done) {
+		summary.summarize(title, content, function(err, summary) {
+			originallength = title.length + content.length;
+			summarylength = summary.length;
+			summaryratio = (100 - (100 * (summarylength / (title.length + content.length))));
 
-	it('summary should be a string', function() {
-		thesummary.should.be.a('string');
+			summary.should.be.a('string');
+
+			done();
+		});
 	});
 
 	it('should summarize content', function() {
-		thesummary.should.not.equal(content);
+		originallength.should.not.equal(summarylength);
 	});
 });
