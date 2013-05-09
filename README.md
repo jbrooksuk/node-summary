@@ -63,3 +63,6 @@ SummaryTool.summarize(title, content, function(err, summary) {
 	$ npm test
 
 Tests are conducted using [mocha](https://npmjs.org/package/mocha) and [should](https://npmjs.org/package/should).
+
+# License
+MIT - [http://jbrooksuk.mit-license.org](http://jbrooksuk.mit-license.org)
