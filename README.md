@@ -1,6 +1,8 @@
 # node-summary
 Summarizes text using a naive summarization algorithm, based off of the [Python implementation](https://gist.github.com/shlomibabluki/5473521) by [shlomibabluki](http://www.github.com/shlomibabluki).
 
+[![Build Status](https://travis-ci.org/jbrooksuk/node-summary.png)](https://travis-ci.org/jbrooksuk/node-summary)
+
 # Algorithm
 The algorithm used is explained [here](http://thetokenizer.com/2013/04/28/build-your-own-summary-tool/). Essentially
 
