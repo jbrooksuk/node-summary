@@ -60,6 +60,14 @@ SummaryTool.summarize(title, content, function(err, summary) {
     	console.log(summary);
     });
 
+    summary.getSortedSentences(content, 5, function(err, sorted_sentences) {
+        if(err) {
+            console.log("There was an error."); // Need better error reporting
+        }
+
+        console.log(sorted_sentences);
+    });
+
 # Tests
 
 	$ npm test
