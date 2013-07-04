@@ -3,6 +3,8 @@ Summarizes text using a naive summarization algorithm, based off of the [Python 
 
 [![Build Status](https://travis-ci.org/jbrooksuk/node-summary.png)](https://travis-ci.org/jbrooksuk/node-summary)
 
+And now with UTF8 support, thanks to [xissy](https://github.com/xissy).
+
 # Algorithm
 The algorithm used is explained [here](http://thetokenizer.com/2013/04/28/build-your-own-summary-tool/). Essentially
 
