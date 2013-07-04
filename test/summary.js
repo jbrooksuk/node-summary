@@ -42,3 +42,13 @@ describe('summarize', function() {
 		originallength.should.not.equal(summarylength);
 	});
 });
+
+describe('getSortedSentences', function() {
+	var originallength, summarylength, summaryratio;
+	it('should get sorted sentences', function(done) {
+		summary.getSortedSentences(content, 5, function(err, sorted_sentences) {
+			sorted_sentences.length.should.equal(5);
+			done();
+		});
+	});
+});
