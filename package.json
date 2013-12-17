@@ -14,7 +14,7 @@
     "algorithm"
   ],
   "dependencies": {
-    "underscore": "*"
+    "lodash-node": "*"
   },
   "devDependencies": {
     "mocha": "1.15.1",
