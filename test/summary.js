@@ -32,7 +32,7 @@ describe('summarize', function() {
 			summarylength = summary.length;
 			summaryratio = (100 - (100 * (summarylength / (title.length + content.length))));
 
-			summary.should.be.a('string');
+			summary.should.be.type('string');
 
 			done();
 		});
