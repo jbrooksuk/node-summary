@@ -52,6 +52,20 @@ SummaryTool.summarize(title, content, function(err, summary) {
 });
 ```
 
+The output of the above is:
+
+```
+Swayy is a beautiful new dashboard for discovering and curating online content [Invites]
+I like it for the simplicity and accuracy of the content curation.
+
+I can share from the service itself, but I generally prefer reading the actual post first – so I end up sharing it from the main link, using Swayy more as a service for discovery.. 
+The idea was born from our day-to-day need to be active on social media, look for the best content to share with our followers, grow them, and measure what content works best.
+
+Original Length 4364
+Summary Length 515
+Summary Ratio: 88.19890009165903
+```
+
 # Usage
 
     summary.summarize(title, content, function(err, summary) {
