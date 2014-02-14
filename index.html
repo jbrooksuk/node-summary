@@ -75,7 +75,7 @@
 <span class="nx">content</span> <span class="o">+=</span> <span class="s2">"Image credit: Thinkstock"</span><span class="p">;</span>
 
 <span class="nx">SummaryTool</span><span class="p">.</span><span class="nx">summarize</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">summary</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Something went wrong man!"</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Something went wrong man!"</span><span class="p">);</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">summary</span><span class="p">);</span>
 
@@ -89,7 +89,7 @@
 
 <pre><code>summary.summarize(title, content, function(err, summary) {
     if(err) {
-        console.log("There was an error."); // Need better error reporting
+        return console.log("There was an error."); // Need better error reporting
     }
 
     console.log(summary);
