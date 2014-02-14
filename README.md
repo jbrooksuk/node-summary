@@ -5,6 +5,9 @@ Summarizes text using a naive summarization algorithm, based off of the [Python 
 
 And now with UTF8 support, thanks to [xissy](https://github.com/xissy).
 
+# The browser?
+I've started working on a [browser branch](https://github.com/jbrooksuk/node-summary/tree/browser) which will enable the use of `node-summary` from Node.js and the browser. All tests are currently passing however I feel like some of the code should be further optimized for the client before I release it.
+
 # Algorithm
 The algorithm used is explained [here](http://thetokenizer.com/2013/04/28/build-your-own-summary-tool/). Essentially
 
