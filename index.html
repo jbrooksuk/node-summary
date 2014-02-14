@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>node-summary in the browser</title>
+</head>
+<body>
+	<form name='summarize'>
+		<textarea name='content' rows='5' cols='100'></textarea>
+		<button type='submit' name='doit'>Summarize</button>
+		<div class='content'></div>
+	</form>
+
+	<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+	<script src='http://underscorejs.org/underscore-min.js'></script>
+	<script src='lib/summary.js'></script>
+
+	<script>
+		(function() {
+			$('form[name=summarize]').on('submit', function(e) {
+				e.preventDefault();
+				var content = $(this).find('textarea[name=content]').val();
+				Summary.summarize(null, content, function(err, summary) {
+					$('.content').text(summary);
+				});
+
+				return false;
+			});
+		}());
+	</script>
+</body>
+</html>
