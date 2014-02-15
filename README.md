@@ -20,7 +20,7 @@ The algorithm used is explained [here](http://thetokenizer.com/2013/04/28/build-
 # Example
 
 ```javascript
-var SummaryTool = require('./index');
+var SummaryTool = require('node-summary');
 
 var title = "Swayy is a beautiful new dashboard for discovering and curating online content [Invites]";
 var content = "";
