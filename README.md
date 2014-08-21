@@ -1,4 +1,4 @@
-# node-summary [![Gittip](http://badgr.co/gittip/jbrooksuk.png)](https://www.gittip.com/jbrooksuk/)
+# node-summary
 Summarizes text using a naive summarization algorithm, based off of the [Python implementation](https://gist.github.com/shlomibabluki/5473521) by [shlomibabluki](http://www.github.com/shlomibabluki).
 
 [![Build Status](https://travis-ci.org/jbrooksuk/node-summary.png)](https://travis-ci.org/jbrooksuk/node-summary)
@@ -102,3 +102,4 @@ MIT - [http://jbrooksuk.mit-license.org](http://jbrooksuk.mit-license.org)
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jbrooksuk/node-summary/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/jbrooksuk)
