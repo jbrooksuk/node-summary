@@ -1,7 +1,7 @@
 # node-summary
 Summarizes text using a naive summarization algorithm, based off of the [Python implementation](https://gist.github.com/shlomibabluki/5473521) by [shlomibabluki](http://www.github.com/shlomibabluki).
 
-[![Build Status](https://travis-ci.org/jbrooksuk/node-summary.png)](https://travis-ci.org/jbrooksuk/node-summary)
+[![Build Status](https://travis-ci.org/jbrooksuk/node-summary.png)](https://travis-ci.org/jbrooksuk/node-summary) [![npm version](https://badge.fury.io/js/node-summary.png)](https://badge.fury.io/js/node-summary)
 
 And now with UTF8 support, thanks to [xissy](https://github.com/xissy).
 
