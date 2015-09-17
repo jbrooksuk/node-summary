@@ -98,8 +98,3 @@ Tests are conducted using [mocha](https://npmjs.org/package/mocha) and [should](
 
 # License
 MIT - [http://jbrooksuk.mit-license.org](http://jbrooksuk.mit-license.org)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jbrooksuk/node-summary/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
-[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/jbrooksuk)
