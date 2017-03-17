@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "lodash": "^4.17.4",
-    "sentence-tokenizer": "0.0.7"
+    "sbd": "^1.0.12"
   },
   "devDependencies": {
     "mocha": "^3.2.0",
