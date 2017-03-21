@@ -1,5 +1,5 @@
 var summary = require('..'),
-	assert = require('should')
+		assert = require('should')
 
 var title = "Swayy is a beautiful new dashboard for discovering and curating online content [Invites]"
 var content = ""

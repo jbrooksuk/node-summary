@@ -4,7 +4,7 @@
   "description": "Summarizes text using a naive summarization algorithm",
   "main": "./lib/summary.js",
   "scripts": {
-    "test": "mocha --require should --reporter spec"
+    "test": "mocha --compilers js:babel-core/register --require should --reporter spec"
   },
   "repository": "git://github.com/jbrooksuk/node-summary.git",
   "keywords": [
@@ -14,6 +14,8 @@
     "algorithm"
   ],
   "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
     "lodash": "^4.17.4",
     "sbd": "^1.0.12"
   },
