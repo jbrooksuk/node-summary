@@ -87,6 +87,15 @@ Summary Ratio: 88.19890009165903
         console.log(sorted_sentences);
     });
 
+For successively calling both `summarize` and `getSortedSentences`, pass in additional `dict` param to avoid reprocessing the dictionary between calls, like so:
+
+    summary.summarize(title, content, function(err, summary, dict) {
+      ...
+      summary.getSortedSentences(content, 5, function(err, sorted_sentences) {
+        ...
+      }, dict)
+    })
+
 # Tests
 
 	$ npm test
