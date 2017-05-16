@@ -1,8 +1,11 @@
 var summary = require('..'),
-		assert = require('should')
+		assert = require('should'),
+		fs = require('fs')
 
 var title = "Swayy is a beautiful new dashboard for discovering and curating online content [Invites]"
 var content = ""
+
+
 content += "Lior Degani, the Co-Founder and head of Marketing of Swayy, pinged me last week when I was in California to tell me about his startup and give me beta access. I heard his pitch and was skeptical. I was also tired, cranky and missing my kids – so my frame of mind wasn't the most positive.\n"
 content += "I went into Swayy to check it out, and when it asked for access to my Twitter and permission to tweet from my account, all I could think was, \"If this thing spams my Twitter account I am going to bitch-slap him all over the Internet.\" Fortunately that thought stayed in my head, and not out of my mouth.\n"
 content += "One week later, I'm totally addicted to Swayy and glad I said nothing about the spam (it doesn't send out spam tweets but I liked the line too much to not use it for this article). I pinged Lior on Facebook with a request for a beta access code for TNW readers. I also asked how soon can I write about it. It's that good. Seriously. I use every content curation service online. It really is That Good.\n"
@@ -57,6 +60,15 @@ describe('summarizeFromUrl', function() {
 	it('should fail when a user passes an invalid url', function(done) {
 		summary.summarizeFromUrl('ttp:/examples.com', function(err, result) {
 			result.should.be == 'Not a valid url. Please try passing a valid url like https://example.com/.'
+			done()
+		})
+	})
+
+	it('should summarize content when given a url', function(done) {
+		var url = 'https://www.forbes.com/sites/viviennedecker/2017/05/14/meet-the-23-year-old-innovating-the-nail-industry-with-static-nails/#4b48c203487d'
+		let summaryText = fs.readFileSync('./test/content-from-url.txt', 'utf8')
+		summary.summarizeFromUrl(url, function(err, result) {
+			result.should.be == summaryText
 			done()
 		})
 	})
