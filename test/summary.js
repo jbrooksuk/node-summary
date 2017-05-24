@@ -1,12 +1,15 @@
 var summary = require('..'),
-		assert = require('should')
+		assert = require('should'),
+		fs = require('fs')
 
 var title = "Swayy is a beautiful new dashboard for discovering and curating online content [Invites]"
 var content = ""
+
+
 content += "Lior Degani, the Co-Founder and head of Marketing of Swayy, pinged me last week when I was in California to tell me about his startup and give me beta access. I heard his pitch and was skeptical. I was also tired, cranky and missing my kids – so my frame of mind wasn't the most positive.\n"
 content += "I went into Swayy to check it out, and when it asked for access to my Twitter and permission to tweet from my account, all I could think was, \"If this thing spams my Twitter account I am going to bitch-slap him all over the Internet.\" Fortunately that thought stayed in my head, and not out of my mouth.\n"
 content += "One week later, I'm totally addicted to Swayy and glad I said nothing about the spam (it doesn't send out spam tweets but I liked the line too much to not use it for this article). I pinged Lior on Facebook with a request for a beta access code for TNW readers. I also asked how soon can I write about it. It's that good. Seriously. I use every content curation service online. It really is That Good.\n"
-content += "What is Swayy? It's like Percolate and LinkedIn recommended articles, mixed with trending keywords for the topics you find interesting, combined with an analytics dashboard that shows the trends of what you do and how people react to it. I like it for the simplicity and accuracy of the content curation.\n" 
+content += "What is Swayy? It's like Percolate and LinkedIn recommended articles, mixed with trending keywords for the topics you find interesting, combined with an analytics dashboard that shows the trends of what you do and how people react to it. I like it for the simplicity and accuracy of the content curation.\n"
 content += "Everything I'm actually interested in reading is in one place – I don't have to skip from another major tech blog over to Harvard Business Review then hop over to another major tech or business blog. It's all in there. And it has saved me So Much Time\n\n"
 content += "After I decided that I trusted the service, I added my Facebook and LinkedIn accounts. The content just got That Much Better. I can share from the service itself, but I generally prefer reading the actual post first – so I end up sharing it from the main link, using Swayy more as a service for discovery.\n"
 content += "I'm also finding myself checking out trending keywords more often (more often than never, which is how often I do it on Twitter.com).\n\n\n"
@@ -48,6 +51,24 @@ describe('getSortedSentences', function() {
 	it('should get sorted sentences', function(done) {
 		summary.getSortedSentences(content, 5, function(err, sorted_sentences) {
 			sorted_sentences.length.should.equal(5)
+			done()
+		})
+	})
+})
+
+describe('summarizeFromUrl', function() {
+	it('should fail when a user passes an invalid url', function(done) {
+		summary.summarizeFromUrl('ttp:/examples.com', function(err, result) {
+			result.should.be == 'Not a valid url. Please try passing a valid url like https://example.com/.'
+			done()
+		})
+	})
+
+	it('should summarize content when given a url', function(done) {
+		var url = 'https://www.forbes.com/sites/viviennedecker/2017/05/14/meet-the-23-year-old-innovating-the-nail-industry-with-static-nails/#4b48c203487d'
+		let summaryText = fs.readFileSync('./test/content-from-url.txt', 'utf8')
+		summary.summarizeFromUrl(url, function(err, result) {
+			result.should.be == summaryText
 			done()
 		})
 	})
