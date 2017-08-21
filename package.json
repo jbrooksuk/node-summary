@@ -1,6 +1,6 @@
 {
   "name": "node-summary",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "Summarizes text using a naive summarization algorithm",
   "main": "./lib/summary.js",
   "scripts": {
