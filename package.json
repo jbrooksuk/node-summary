@@ -29,7 +29,8 @@
     "html-to-text": "^3.2.0",
     "lodash": "^4.17.4",
     "sbd": "^1.0.12",
-    "source-map-support": "^0.5.7"
+    "source-map-support": "^0.5.7",
+    "unfluff": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
