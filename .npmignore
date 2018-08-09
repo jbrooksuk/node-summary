@@ -1,0 +1,7 @@
+.*
+node_modules
+gulpfile.js
+lib
+*.tgz
+*.lock
+**/*.spec.js
