@@ -139,8 +139,5 @@ For successively calling both `summarize` and `getSortedSentences`, pass in addi
 
 Tests are conducted using [mocha](https://npmjs.org/package/mocha) and [should](https://npmjs.org/package/should).
 
-# Forks
-- [node-sumparticles](https://github.com/philplckthun/node-sumuparticles) - A webarticle summarizer by @philplckthun.
-
 # License
 MIT - [http://jbrooksuk.mit-license.org](http://jbrooksuk.mit-license.org)
