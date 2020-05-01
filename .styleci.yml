@@ -1,0 +1,17 @@
+js:
+    tab-width: 2
+    use-tabs: false
+    print-width: 80
+    double-quotes: false
+    trailing-commas: es5
+    semicolons: false
+    arrow-parens: avoid
+    bracket-spacing: true
+    finder:
+        exclude:
+            - node_modules
+        name:
+            - '*.js'
+            - '*.jsx'
+        not-name:
+            - '*.min.js'
