@@ -1,6 +1,7 @@
 {
   "name": "node-summary",
   "version": "1.2.0",
+  "type": "module",
   "description": "Summarizes text using a naive summarization algorithm",
   "main": "./lib/summary.js",
   "scripts": {
@@ -18,7 +19,7 @@
     "babel-preset-es2015": "^6.24.0",
     "cheerio": "^0.22.0",
     "html-to-text": "^5.1.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "request": "^2.88",
     "sbd": "^1.0"
   },

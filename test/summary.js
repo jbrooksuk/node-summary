@@ -1,6 +1,6 @@
-var summary = require('..'),
-  assert = require('should'),
-  fs = require('fs')
+import { summarize, getSortedSentences, summarizeFromUrl } from '../lib/summary.js'
+import { default as fs } from 'fs'
+import { promisify } from 'util';
 
 var title =
   'Swayy is a beautiful new dashboard for discovering and curating online content [Invites]'
@@ -46,7 +46,7 @@ content += 'Image credit: Thinkstock'
 describe('summarize', function () {
   var originallength, summarylength, summaryratio
   it('should build summary', function (done) {
-    summary.summarize(title, content, function (err, summary) {
+    summarize(title, content, function (err, summary) {
       originallength = title.length + content.length
       summarylength = summary.length
       summaryratio =
@@ -64,10 +64,19 @@ describe('summarize', function () {
 })
 
 describe('getSortedSentences', function () {
-  var originallength, summarylength, summaryratio
   it('should get sorted sentences', function (done) {
-    summary.getSortedSentences(content, 5, function (err, sorted_sentences) {
+    getSortedSentences(content, 5, function (err, sorted_sentences) {
       sorted_sentences.length.should.equal(5)
+      done()
+    })
+  })
+})
+
+describe('promise:summarize', function () {
+  it('should build summary in promise structure', function (done) {
+    const promise = promisify(summarize,)(title, content)
+    promise.then(summary => {
+      summary.should.be.type('string')
       done()
     })
   })
@@ -75,7 +84,7 @@ describe('getSortedSentences', function () {
 
 describe('summarizeFromUrl', function () {
   it('should fail when a user passes an invalid url', function (done) {
-    summary.summarizeFromUrl('ttp:/examples.com', function (err, result) {
+    summarizeFromUrl('ttp:/examples.com', function (err, result) {
       result.should.be ==
         'Not a valid url. Please try passing a valid url like https://example.com/.'
       done()
@@ -86,7 +95,7 @@ describe('summarizeFromUrl', function () {
     var url =
       'https://www.forbes.com/sites/viviennedecker/2017/05/14/meet-the-23-year-old-innovating-the-nail-industry-with-static-nails/#4b48c203487d'
     let summaryText = fs.readFileSync('./test/content-from-url.txt', 'utf8')
-    summary.summarizeFromUrl(url, function (err, result) {
+    summarizeFromUrl(url, function (err, result) {
       result.should.be == summaryText
       done()
     })
