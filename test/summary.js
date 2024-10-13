@@ -1,6 +1,10 @@
-import { summarize, getSortedSentences, summarizeFromUrl } from '../lib/summary.js'
+import {
+  summarize,
+  getSortedSentences,
+  summarizeFromUrl,
+} from '../lib/summary.js'
 import { default as fs } from 'fs'
-import { promisify } from 'util';
+import { promisify } from 'util'
 
 var title =
   'Swayy is a beautiful new dashboard for discovering and curating online content [Invites]'
@@ -74,7 +78,7 @@ describe('getSortedSentences', function () {
 
 describe('promise:summarize', function () {
   it('should build summary in promise structure', function (done) {
-    const promise = promisify(summarize,)(title, content)
+    const promise = promisify(summarize)(title, content)
     promise.then(summary => {
       summary.should.be.type('string')
       done()
